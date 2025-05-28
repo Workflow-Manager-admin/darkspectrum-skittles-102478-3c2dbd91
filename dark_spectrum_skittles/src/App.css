@@ -96,17 +96,68 @@ body {
 }
 
 .container {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 0 10px;
+  /* Remove the max-width constraint to allow full viewport width */
+  max-width: none;
   width: 100%;
+  margin: 0;
+  padding: 0 10px;
   box-sizing: border-box;
 }
 
+/* Responsive layout: app, page, and card tweaks */
 .page {
   min-height: calc(100vh - 70px);
   padding-top: 72px;
   padding-bottom: 8px;
+  width: 100vw; /* Expand page areas to screen width */
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Responsive card tweaks for grids */
+.card,
+.glassy-card,
+.compact-card {
+  width: 100%;
+  max-width: 240px;
+  min-width: 0;
+  margin: 0 auto 10px auto;
+  box-sizing: border-box;
+}
+
+/* For grids using CSS grid: always stretch to available space */
+@media (max-width: 600px) {
+  .card,
+  .glassy-card,
+  .compact-card {
+    max-width: 96vw;
+    min-width: 120px;
+    width: 100vw;
+    margin: 0 0 10px 0;
+  }
+  .container,
+  .page {
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  .card,
+  .glassy-card,
+  .compact-card {
+    max-width: 170px;
+  }
+}
+
+/* Remove double margin from last card in grid */
+.card:last-child,
+.glassy-card:last-child,
+.compact-card:last-child {
+  margin-bottom: 0;
 }
 
 .glassy-card,
