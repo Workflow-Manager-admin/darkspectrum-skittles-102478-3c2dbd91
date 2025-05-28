@@ -136,16 +136,18 @@ function Home() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-            gap: "16px", // Even gutter in both directions
-            width: "100%",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "32px 26px",
+            width: "96%",
+            maxWidth: "1300px",
+            margin: "0 auto",
             alignItems: "stretch",
             justifyItems: "center",
-            padding: "4px 1vw",
+            padding: "10px 0",
           }}
         >
           {loading ? (
-            <span style={{ color: "#eee", fontSize: ".98rem" }}>
+            <span style={{ color: "#eee", fontSize: "1.08rem" }}>
               Loading ...
             </span>
           ) : (
@@ -155,19 +157,19 @@ function Home() {
                 className="glassy-card compact-card"
                 style={{
                   width: "100%",
-                  maxWidth: 180,
+                  maxWidth: 320,
                   minWidth: 0,
                   cursor: "pointer",
-                  padding: "12px 8px 16px 8px",
+                  padding: "22px 14px 28px 14px",
                   background: theme.colors.glass,
-                  borderRadius: "0.98rem",
+                  borderRadius: "1.3rem",
                   transition: "box-shadow 0.13s",
-                  boxShadow: "0 2px 12px #4da37633, 0 0 7px #8fe0bd19",
-                  border: "1.1px solid rgba(255,255,255,0.10)",
+                  boxShadow: "0 4px 16px #4da37633, 0 0 15px #8fe0bd20",
+                  border: "1.5px solid rgba(255,255,255,0.13)",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  minHeight: 170,
+                  minHeight: 240,
                   margin: 0,
                 }}
                 onClick={() => navigate(`/products/${product.id}`)}
@@ -179,32 +181,32 @@ function Home() {
                   alt={product.title}
                   className="product-img"
                   style={{
-                    width: 80,
-                    height: 80,
+                    width: 132,
+                    height: 132,
                     objectFit: "cover",
                     background: "#222",
-                    borderRadius: 18,
-                    marginBottom: 7,
-                    boxShadow: "0 3px 10px #8fe0bd1e, 0 0 7px #8fe0bd19",
+                    borderRadius: 26,
+                    marginBottom: 14,
+                    boxShadow: "0 3px 18px #8fe0bd2e, 0 0 9px #8fe0bd24",
                   }}
                   loading="lazy"
                 />
                 <div
                   style={{
                     color: theme.colors.textPrimary,
-                    fontWeight: 600,
-                    marginTop: 2,
-                    fontSize: ".92rem",
+                    fontWeight: 700,
+                    marginTop: 8,
+                    fontSize: "1.16rem",
                     textAlign: "center",
                     overflowWrap: "break-word",
                     wordBreak: "break-word",
                     hyphens: "auto",
-                    lineHeight: 1.14,
+                    lineHeight: 1.18,
                     minHeight: "2.1em",
-                    maxHeight: "2.8em",
+                    maxHeight: "3.2em",
                     overflow: "hidden",
-                    marginBottom: 1,
-                    padding: "0 1px",
+                    marginBottom: 5,
+                    padding: "0 3px",
                     display: "-webkit-box",
                     WebkitLineClamp: 2,
                     WebkitBoxOrient: "vertical",
@@ -217,9 +219,9 @@ function Home() {
                 <div
                   style={{
                     color: theme.colors.secondary,
-                    fontSize: ".87rem",
-                    marginTop: 4,
-                    fontWeight: 500,
+                    fontSize: "1.12rem",
+                    marginTop: 6,
+                    fontWeight: 600,
                   }}
                 >
                   ${product.price}
