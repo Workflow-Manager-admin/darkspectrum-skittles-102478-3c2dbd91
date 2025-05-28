@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import theme from "../theme";
-import SkittlesLogo from "../assets/SkittlesLogo.svg";
-
+import SkittlesLogo from "../assets/SkittlesLogo.svg"; // Updated asset
 // PUBLIC_INTERFACE
 /**
  * Renders the navigation bar for the DarkSpectrum Skittles app.
