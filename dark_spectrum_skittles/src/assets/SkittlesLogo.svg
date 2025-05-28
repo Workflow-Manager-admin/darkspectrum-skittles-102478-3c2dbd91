@@ -1,0 +1,19 @@
+<svg width="41" height="33" viewBox="0 0 41 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="20.5" cy="16.5" rx="19" ry="13.5" fill="url(#paint0_radial)" stroke="#fff" stroke-width="1.2"/>
+  <ellipse cx="12.5" cy="14" rx="3.5" ry="3" fill="#E87A41"/>
+  <ellipse cx="27.5" cy="10" rx="3.8" ry="3.2" fill="#8fe0bd"/>
+  <ellipse cx="31.2" cy="20.9" rx="2.9" ry="2" fill="#4da376"/>
+  <ellipse cx="18.7" cy="24.1" rx="2.7" ry="1.8" fill="#FADA39"/>
+  <ellipse cx="15.9" cy="8.3" rx="2.3" ry="1.6" fill="#EB4089"/>
+  <ellipse cx="25.2" cy="20.4" rx="2.7" ry="2.1" fill="#A959E2"/>
+  <path d="M14 15.5c1.1-2 5.4-5.3 13-2.5" stroke="#fff" stroke-width=".6" stroke-linecap="round"/>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientTransform="translate(20.5 16.5) scale(23 17)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fbedb8"/>
+      <stop offset=".3" stop-color="#E87A41"/>
+      <stop offset=".5" stop-color="#8fe0bd"/>
+      <stop offset=".73" stop-color="#4da376"/>
+      <stop offset="1" stop-color="#202534"/>
+    </radialGradient>
+  </defs>
+</svg>
