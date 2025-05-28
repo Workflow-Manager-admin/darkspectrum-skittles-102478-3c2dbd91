@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import theme from "../theme";
-// Placeholder for a Scribbles Logo - you can replace '🖌️' with an SVG if you add one
+import ScribblesLogo from "../assets/ScribblesLogo.svg";
+
 // PUBLIC_INTERFACE
 /**
  * Renders the navigation bar for the Scribbles fashion app.
@@ -47,29 +48,52 @@ function Navbar() {
             padding: "0 2px"
           }}
         >
+          {/* Fashion logo: SVG, not emoji */}
           <span
             style={{
               display: "flex",
               alignItems: "center",
-              padding: "0",
+              padding: 0,
               marginRight: 3,
               borderRadius: "50%",
               boxShadow: "0 0 18px 3px #232928dd, 0 2px 18px #E87A4142, 0 0 30px #4da37631",
-              background: "rgba(20,22,40,0.16)"
+              background: "rgba(20,22,40,0.13)",
+              height: 43,
+              width: 134,
+              overflow: "visible"
             }}
           >
-            {/* Modern scribbled paint brush or clothing hanger icon. Replace '🖌️' with image for production. */}
-            <span role="img" aria-label="Scribbles logo" style={{fontSize: 32}}>🖌️</span>
+            <img
+              src={ScribblesLogo}
+              alt="Scribbles Logo"
+              height={43}
+              width={134}
+              style={{
+                display: "block",
+                height: 43,
+                width: 134,
+                minWidth: 103,
+                minHeight: 34,
+                objectFit: "contain",
+                filter: "drop-shadow(0 2px 12px #8fe0bd55)"
+              }}
+              loading="eager"
+            />
           </span>
+          {/* (optional: might skip wordmark if already in SVG, so below span can be kept for accessibility or for external logo text) */}
           <span
             style={{
               color: theme.colors.textPrimary,
               letterSpacing: "0.09em",
               fontWeight: 900,
               textShadow: "0 3px 18px #8fe0bd22, 0 2px 14px #4da37633",
-              fontSize: "1.5rem",
+              fontSize: "1.45rem",
               display: "inline",
-              transform: "translateY(2px)"
+              transform: "translateY(2px)",
+              marginLeft: 0,
+              // Hide wordmark if SVG already displays it
+              position: "absolute",
+              left: "-10000px"
             }}
           >
             Scribbles
