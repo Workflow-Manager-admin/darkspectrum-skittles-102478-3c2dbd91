@@ -34,88 +34,300 @@ function Home() {
         paddingBottom: 10,
       }}
     >
-      {/* Hero section */}
-      <div
-        className="hero"
+      {/* Taste The Rainbow Hero - fully revamped */}
+      <section
+        className="taste-rainbow-hero"
         style={{
-          padding: 0,
-          margin: 0,
-          minHeight: 170,
-          flexDirection: "column",
-          gap: "9px",
+          width: "100%",
+          margin: "0 auto 44px auto",
+          padding: "0",
+          minHeight: 420,
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 1,
         }}
       >
         <div
-          className="glass"
           style={{
-            background: theme.colors.gradient,
-            borderRadius: "1.1rem",
-            boxShadow: theme.colors.glowAccent,
-            padding: "22px 9px", // more compact
-            maxWidth: "390px",
-            margin: "0 auto",
-            alignItems: "center",
+            position: "absolute",
+            inset: 0,
+            zIndex: 0,
+            pointerEvents: "none",
+            overflow: "hidden",
+            borderRadius: "2.6rem",
+          }}
+          aria-hidden="true"
+        >
+          {/* Rainbow Animated Gradient BG w/ noise overlay & glow */}
+          <div
+            style={{
+              // keyframes for shifting gradient
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              background:
+                "linear-gradient(135deg, #ff3a2d 7%, #ffbe30 23%, #55e831 45%, #2ecbe7 73%, #c43bde 91%)",
+              backgroundSize: "200% 200%",
+              filter: "blur(0.5px) brightness(1.11)",
+              zIndex: 1,
+              animation: "rainbowgradientmove 12s linear infinite alternate",
+              opacity: 1,
+              borderRadius: "2.6rem",
+              boxShadow:
+                "0 0 42px 0px #825ecf99, 0 8px 54px 14px #fe3a2d22, 0 0 88px 24px #31e88f33",
+            }}
+          />
+          {/* Subtle noise overlay (SVG as data URI or radial SVG) */}
+          <div
+            style={{
+              position: "absolute", inset: 0, pointerEvents: "none", zIndex: 3,
+              background: "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22 opacity=%220.12%22><filter id=%22n%22><feTurbulence baseFrequency=%220.99%22 numOctaves=%222%22 seed=%2242%22/></filter><rect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22/></svg>')",
+              opacity: 0.14,
+              borderRadius: "2.6rem",
+              mixBlendMode: "soft-light"
+            }}
+          />
+          {/* Glow edge */}
+          <div
+            style={{
+              position: "absolute",
+              inset: "-8px",
+              borderRadius: "2.8rem",
+              zIndex: 2,
+              filter: "blur(16px)",
+              background:
+                "conic-gradient(from 0deg, #ffe24f 12%, #34f5bc 54%, #e845ff 77%, #ffe24f 100%)",
+              opacity: 0.42,
+            }}
+          />
+          <style>
+            {`
+@keyframes rainbowgradientmove {
+  0% {
+    background-position: 0% 52%;
+  }
+  100% {
+    background-position: 100% 48%;
+  }
+}
+            `}
+          </style>
+        </div>
+        <div
+          className="glass hero-content"
+          style={{
+            position: "relative",
+            zIndex: 4,
+            background: "rgba(30,30,38,0.75)",
+            minHeight: 330,
+            width: "100%",
+            maxWidth: 830,
+            margin: "4px auto",
+            padding: "46px 26px 40px 26px",
+            borderRadius: "2.5rem",
+            boxShadow:
+              "0 14px 54px #3c2b5066, 0 0 44px #ffbe308e, 0 0 44px #8fe0bd33, 0 8px 38px #825ecf44",
+            border: "2.6px solid rgba(255,255,255,0.14)",
+            backdropFilter: "blur(10.5px)",
             display: "flex",
-            flexDirection: "column",
-            gap: 7,
-            border: "1.1px solid rgba(255,255,255,0.10)",
-            backdropFilter: "blur(7px)",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 30,
+            overflow: "visible",
+            justifyContent: "center"
           }}
         >
-          <h1
-            style={{
-              fontSize: "2.05rem",
-              fontWeight: 800,
-              margin: 0,
-              letterSpacing: ".01em",
-              textShadow: "0 2px 14px #8fe0bd33",
-            }}
-          >
-            Taste The <span style={{ color: "#fff" }}>Rainbow</span>
-          </h1>
+          {/* Skittles SVG illustration */}
           <div
-            className="subtitle"
             style={{
-              color: theme.colors.secondary,
-              fontWeight: 600,
-              marginTop: 0,
-              marginBottom: 5,
-              fontSize: "1.05rem",
-              letterSpacing: "0.01em",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              minWidth: 160,
+              width: 190,
+              padding: 0,
+              marginRight: 0,
+              marginLeft: 0,
             }}
           >
-            Skittles Product Showcase
+            {/* Simple Skittles pile, SVG */}
+            <svg
+              width="170"
+              height="146"
+              viewBox="0 0 170 146"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{
+                marginBottom: 7,
+                filter:
+                  "drop-shadow(0 6px 20px #ff3a2d44) drop-shadow(0 0 17px #ffe24f44)",
+              }}
+              aria-label="Colorful Skittles candies illustration"
+            >
+              <ellipse cx="95" cy="120" rx="24" ry="22" fill="#ffe24f" />
+              <ellipse cx="80" cy="110" rx="18" ry="15" fill="#55e831" />
+              <ellipse cx="120" cy="113" rx="15" ry="14" fill="#ff3a2d" />
+              <ellipse cx="61" cy="133" rx="17" ry="11" fill="#2ecbe7" />
+              <ellipse cx="130" cy="134" rx="13" ry="10" fill="#c43bde" />
+              {/* White shine/highlights */}
+              <ellipse cx="108" cy="124" rx="4" ry="2.1" fill="#fff8" />
+              <ellipse cx="71" cy="112" rx="3" ry="1.7" fill="#fff7" />
+              <ellipse cx="120" cy="117" rx="2" ry="1" fill="#fff6" />
+              <ellipse cx="66" cy="137" rx="2" ry="1" fill="#fff6" />
+              <ellipse cx="132" cy="136" rx="2" ry="1" fill="#fff6" />
+            </svg>
+            <span style={{
+              fontWeight: 700,
+              fontSize: '1.03rem',
+              color: "#eeec",
+              letterSpacing: ".07em"
+            }}
+            >A rainbow of Skittles</span>
           </div>
-          <p
+          {/* Main Textual Reveal - Bold Rainbow Headline */}
+          <div
             style={{
-              color: theme.colors.textSecondary,
-              fontSize: ".98rem",
-              margin: "0px 0 7px 0",
-              textAlign: "center",
-              lineHeight: 1.35,
-              maxWidth: "290px",
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: 11,
+              paddingLeft: 5,
+              paddingRight: 5,
+              minWidth: 220,
             }}
           >
-            Explore a vibrant variety of Skittles. Dive into unique flavors, bold styles, and a delicious modern dark UI. Your candy adventure starts here!
-          </p>
-          <Link
-            to="/products"
-            style={{
-              background: theme.colors.primary,
-              color: "#fff",
-              fontSize: ".97rem",
-              padding: "7px 16px",
-              borderRadius: "1.15rem",
-              textDecoration: "none",
-              boxShadow: "0 1px 11px #4da37644",
-              marginTop: "5px",
-              transition: "background 0.16s",
-            }}
-          >
-            Browse All Products
-          </Link>
+            {/* Dramatic rainbow headline */}
+            <h1
+              style={{
+                fontSize: "3.4rem",
+                fontWeight: 900,
+                margin: 0,
+                lineHeight: 1.08,
+                letterSpacing: ".01em",
+                background:
+                  "linear-gradient(90deg, #ff3a2d 0%, #ffbe30 20%, #55e831 40%, #2ecbe7 65%, #c43bde 85%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                WebkitTextFillColor: "transparent",
+                filter: "drop-shadow(0 3px 16px #232c2e66)",
+                textShadow: "0 3px 19px #3c452099, 0 0 10px #825ecf11",
+                fontFamily:
+                  "'GT Walsheim Pro', 'Arial Rounded MT Bold', 'Inter', sans-serif",
+                transition: "font-size 0.2s",
+              }}
+            >
+              Taste The Rainbow
+            </h1>
+            <div
+              style={{
+                color: "#fffd",
+                fontWeight: 700,
+                fontSize: "1.16rem",
+                marginTop: 2,
+                marginBottom: 6,
+                letterSpacing: ".02em",
+                textShadow: "0 2px 14px #3c452027",
+              }}
+            >
+              <span role="img" aria-label="sparkles">✨</span> Skittles - The Original Colorful Candy
+            </div>
+            <p
+              style={{
+                color: "rgba(255,255,255,0.82)",
+                fontSize: "1.21rem",
+                margin: "0px 0 12px 0",
+                textShadow: "0 1.5px 14px #8fe0bd44",
+                lineHeight: 1.39,
+                fontWeight: 500,
+                letterSpacing: '.011em',
+                maxWidth: 410,
+                opacity: 0.98,
+              }}
+            >
+              Enter a world of fruity flavor and dazzling color. Experience the magic of the rainbow—Skittles bring fun, joy, and adventure to every bite!
+            </p>
+            <Link
+              to="/products"
+              tabIndex={0}
+              style={{
+                background:
+                  "linear-gradient(90deg, #ff3a2d 30%, #ffe24f 80%)",
+                color: "#181d23",
+                fontWeight: 900,
+                fontSize: "1.13rem",
+                padding: "17px 38px",
+                borderRadius: "1.7rem",
+                textDecoration: "none",
+                textShadow: "0 4px 20px #fff6, 0 4px 9px #e87a4118",
+                boxShadow:
+                  "0 2px 38px #ffbe3014, 0 1.5px 10px #4da37611, 0 1px 13px #825ecf13",
+                border: "2px solid #fff7",
+                outline: 0,
+                marginTop: "7px",
+                letterSpacing: ".03em",
+                filter: "drop-shadow(0 1.5px 40px #ffe24f32)",
+                cursor: "pointer",
+                transition: "background 0.18s, color 0.15s",
+                willChange: "background,color",
+              }}
+              onMouseOver={e =>
+                (e.target.style.background =
+                  "linear-gradient(90deg, #ffe24f 20%, #ff3a2d 90%)")
+              }
+              onMouseOut={e =>
+                (e.target.style.background =
+                  "linear-gradient(90deg, #ff3a2d 30%, #ffe24f 80%)")
+              }
+            >
+              <span role="img" aria-label="rainbow">🌈</span> Shop the Rainbow!
+            </Link>
+          </div>
         </div>
-      </div>
+        {/* Right floating decorative rainbow + skittles arcs, only on desktop */}
+        <div
+          style={{
+            display: "none",
+            position: "absolute",
+            right: "1.4%",
+            top: "19%",
+            width: "110px",
+            zIndex: 10,
+            pointerEvents: "none"
+          }}
+          className="rainbow-arcs-desktop"
+        >
+          <svg
+            width="100"
+            height="110"
+            viewBox="0 0 100 110"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{}}
+          >
+            <path d="M82 90 Q50 35 18 90" stroke="#ff3a2d" strokeWidth="14" fill="none" opacity="0.70" />
+            <path d="M80 85 Q50 45 20 85" stroke="#ffe24f" strokeWidth="9" fill="none" opacity="0.80" />
+            <path d="M78 80 Q50 60 22 80" stroke="#2ecbe7" strokeWidth="6" fill="none" opacity="0.70" />
+            <circle cx="27" cy="94" r="5" fill="#55e831" />
+            <circle cx="73" cy="94" r="5" fill="#c43bde" />
+          </svg>
+        </div>
+        <style>
+          {`
+            @media (min-width: 780px) {
+              .rainbow-arcs-desktop {
+                display: block;
+              }
+            }
+          `}
+        </style>
+      </section>
       {/* Product preview grid/carousel */}
       <div
         style={{
