@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import theme from "../theme";
+import SkittlesLogo from "../assets/SkittlesLogo.svg";
 
 // PUBLIC_INTERFACE
 /**

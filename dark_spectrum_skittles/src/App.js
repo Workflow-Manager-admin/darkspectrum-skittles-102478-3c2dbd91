@@ -30,12 +30,12 @@ function App() {
       <div className="app" style={{
         // Glassmorphism for app background
         minHeight: "100vh",
-        background: "rgba(0,0,0,0.25)",
+        background: "rgba(0,0,0,0.22)",
         position: "relative",
-        paddingTop: 76 // to offset the fixed navbar
+        paddingTop: 68 // to offset the fixed navbar (smaller)
       }}>
         <Navbar />
-        <div style={{ maxWidth: "1024px", margin: "0 auto", padding: "0 1.5rem" }}>
+        <div style={{ maxWidth: "980px", margin: "0 auto", padding: "0 10px" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
