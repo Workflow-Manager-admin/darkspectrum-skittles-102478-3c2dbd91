@@ -152,7 +152,7 @@ body {
   .card,
   .glassy-card,
   .compact-card {
-    max-width: 170px;
+    max-width: 240px;
   }
 }
 
