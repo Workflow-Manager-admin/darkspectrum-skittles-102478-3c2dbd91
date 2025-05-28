@@ -31,30 +31,64 @@ function Navbar() {
         padding: "0 32px",
         width: "100%"
       }}>
-        <Link to="/" className="logo" style={{
-          fontSize: "1.4rem",
-          fontWeight: 700,
-          color: theme.colors.accent,
-          textDecoration: "none",
-          letterSpacing: "0.07em",
-          display: "flex", alignItems: "center", gap: 11,
-          filter: "drop-shadow(0 2px 8px #8fe0bd44)"
-        }}>
-          <img
-            src={SkittlesLogo}
-            alt="Skittles/ColorCraft Logo"
+        <Link
+          to="/"
+          className="logo"
+          style={{
+            fontSize: "1.48rem",
+            fontWeight: 800,
+            color: theme.colors.accent,
+            textDecoration: "none",
+            letterSpacing: "0.07em",
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            filter: "drop-shadow(0 4px 16px #8fe0bd66)",
+            padding: "0 2px"
+          }}
+        >
+          <span
             style={{
-              height: 32,
-              width: "auto",
-              marginRight: 2,
-              verticalAlign: "middle",
-              filter: "drop-shadow(0 2px 7px #E87A4188)"
+              display: "flex",
+              alignItems: "center",
+              padding: "0",
+              marginRight: 3,
+              borderRadius: "50%",
+              boxShadow: "0 0 18px 3px #232928dd, 0 2px 18px #E87A4142, 0 0 30px #4da37631",
+              background: "rgba(20,22,40,0.16)"
             }}
-            draggable={false}
-            aria-hidden="true"
-            className="logo-svg"
-          />
-          <span style={{color: theme.colors.textPrimary, letterSpacing: "0.08em"}}>
+          >
+            <img
+              src={SkittlesLogo}
+              alt="Skittles/ColorCraft Logo"
+              style={{
+                height: 38,
+                width: 38,
+                minWidth: 38,
+                aspectRatio: "1/1",
+                verticalAlign: "middle",
+                filter:
+                  "drop-shadow(0 2px 12px #E87A4170) drop-shadow(0 0px 9px #8fe0bd41)",
+                background: "transparent",
+                borderRadius: "50%",
+                boxShadow: "0 0 18px 2px #8fe0bd33"
+              }}
+              draggable={false}
+              aria-hidden="true"
+              className="logo-svg"
+            />
+          </span>
+          <span
+            style={{
+              color: theme.colors.textPrimary,
+              letterSpacing: "0.09em",
+              fontWeight: 900,
+              textShadow: "0 3px 18px #8fe0bd22, 0 2px 14px #4da37633",
+              fontSize: "1.5rem",
+              display: "inline",
+              transform: "translateY(2px)"
+            }}
+          >
             DarkSpectrum Skittles
           </span>
         </Link>
