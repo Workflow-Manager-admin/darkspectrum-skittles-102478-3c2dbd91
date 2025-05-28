@@ -54,7 +54,7 @@ function Home() {
             backdropFilter: "blur(8px)",
           }}>
           <h1 style={{
-            color: theme.colors.accent,
+            // color is now handled globally via CSS for headings
             fontSize: "2.8rem",
             fontWeight: 800,
             margin: 0,
@@ -103,7 +103,7 @@ function Home() {
         maxWidth: 900,
       }}>
         <h3 style={{
-          color: theme.colors.accent,
+          // color is now inherited as white from global CSS heading rule
           fontWeight: 600,
           marginLeft: "10px",
           fontSize: "1.4rem",

@@ -32,7 +32,7 @@ function Products() {
       color: theme.colors.textPrimary,
     }}>
       <h2 style={{
-        color: theme.colors.secondary,
+        // color is now inherited as white from global CSS heading rule
         fontSize: "2rem",
         fontWeight: 700,
         marginBottom: 28,
