@@ -36,11 +36,12 @@ function App() {
       }}>
         <Navbar />
         <div
+          className="container"
           style={{
             width: "100%",
-            maxWidth: "none", // Remove maxWidth constraint
-            margin: 0, // Remove auto margin to allow full width
-            padding: "0 10px",
+            maxWidth: "1500px",
+            margin: "0 auto",
+            padding: "0 18px",
             boxSizing: "border-box"
           }}
         >

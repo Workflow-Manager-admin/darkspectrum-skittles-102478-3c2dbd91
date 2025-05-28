@@ -43,13 +43,16 @@ function Products() {
       <div style={{
         display: "flex",
         flexWrap: "wrap",
-        gap: "26px 23px",
+        gap: "34px 28px",
         justifyContent: products.length < 3 ? "flex-start" : "center",
         minHeight: 180,
-        marginBottom: 33
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginBottom: 42,
+        maxWidth: "1440px"
       }}>
         {loading ? (
-          <span style={{color: "#ccc"}}>Loading products ...</span>
+          <span style={{color: "#ccc", fontSize:"1.13rem"}}>Loading products ...</span>
         ) : error ? (
           <span style={{color: "#e88787"}}>{error}</span>
         ) : (
@@ -58,16 +61,19 @@ function Products() {
               key={product.id}
               className="card"
               style={{
-                width: 240,
-                margin: "0 5px 15px 0",
+                width: 330,
+                minWidth: 220,
+                maxWidth: 360,
+                margin: "0 9px 24px 0",
                 background: theme.colors.glass,
                 cursor: "pointer",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                boxShadow: "0 6px 24px #8fe0bd22, 0 0 14px #8fe0bd11",
-                border: "1.5px solid rgba(255,255,255,.11)",
+                boxShadow: "0 9px 24px #8fe0bd29, 0 0 22px #8fe0bd14",
+                border: "2px solid rgba(255,255,255,.13)",
                 transition: "box-shadow 0.13s",
+                fontSize: "1.15rem"
               }}
               tabIndex={0}
               aria-label={`View ${product.title}`}
@@ -78,51 +84,52 @@ function Products() {
                   alt={product.title}
                   className="product-img"
                   style={{
-                    width: 120,
-                    height: 120,
+                    width: 170,
+                    height: 170,
                     objectFit: "cover",
-                    borderRadius: 30,
+                    borderRadius: 38,
                     background: "#181c22",
-                    boxShadow: "0 6px 25px #8fe0bd33"
+                    boxShadow: "0 8px 27px #8fe0bd44"
                   }}
                   loading="lazy"
                 />
               </div>
               <div style={{
                 color: theme.colors.textPrimary,
-                fontWeight: 600,
-                marginTop: 8,
+                fontWeight: 700,
+                marginTop: 14,
                 textAlign: "center",
-                whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
-                width: "98%"
+                width: "98%",
+                fontSize: "1.19rem",
+                whiteSpace: "nowrap"
               }}>
                 <Link to={`/products/${product.id}`} style={{
                   color: "#fff",
                   textDecoration: "none",
-                  textShadow: "0 1px 6px #222",
-                  fontSize: "1.06rem",
+                  textShadow: "0 2px 13px #222",
+                  fontSize: "1.19rem",
                 }}>{product.title}</Link>
               </div>
               <div style={{
                 color: theme.colors.secondary,
-                fontWeight: 500,
-                margin: "8px 0",
-                fontSize: "1.07rem",
+                fontWeight: 600,
+                margin: "10px 0",
+                fontSize: "1.11rem",
               }}>
                 ${product.price}
               </div>
               <button
                 className="btn"
                 style={{
-                  marginTop: 6,
-                  width: "88%",
-                  borderRadius: 25,
-                  fontSize: ".98rem",
+                  marginTop: 10,
+                  width: "94%",
+                  borderRadius: 32,
+                  fontSize: "1.04rem",
                   letterSpacing: ".01em",
                   background: `linear-gradient(90deg,${theme.colors.primary} 70%, ${theme.colors.accent})`,
-                  boxShadow: "0 2px 15px #8fe0bd44"
+                  boxShadow: "0 2px 16px #8fe0bd44"
                 }}
                 onClick={() => addToCart(product, 1)}
               >
