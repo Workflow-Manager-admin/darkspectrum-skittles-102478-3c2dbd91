@@ -44,7 +44,7 @@ function Cart() {
         </h3>
         {cartItems.length === 0 ? (
           <div style={{ marginTop: 37, color: "#ccc", fontSize: "1.09rem" }}>
-            Your cart is empty.
+            Your bag is empty.
             <span> </span>
             <Link
               to="/products"
@@ -52,7 +52,7 @@ function Cart() {
                 color: theme.colors.accent,
                 textDecoration: "underline",
                 fontWeight: 600,
-              }}>Browse Skittles Products</Link>
+              }}>Browse Clothing & Accessories</Link>
           </div>
         ) : (
           <div>

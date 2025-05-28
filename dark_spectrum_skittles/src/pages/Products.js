@@ -32,13 +32,12 @@ function Products() {
       color: theme.colors.textPrimary,
     }}>
       <h2 style={{
-        // color is now inherited as white from global CSS heading rule
         fontSize: "2rem",
         fontWeight: 700,
         marginBottom: 28,
         marginLeft: 6
       }}>
-        Skittles Products
+        Shop Clothing & Accessories
       </h2>
       <div style={{
         display: "flex",
@@ -52,7 +51,7 @@ function Products() {
         maxWidth: "1440px"
       }}>
         {loading ? (
-          <span style={{color: "#ccc", fontSize:"1.13rem"}}>Loading products ...</span>
+          <span style={{color: "#ccc", fontSize:"1.13rem"}}>Loading styles ...</span>
         ) : error ? (
           <span style={{color: "#e88787"}}>{error}</span>
         ) : (
@@ -133,7 +132,7 @@ function Products() {
                 }}
                 onClick={() => addToCart(product, 1)}
               >
-                Add to Cart
+                Add to Bag
               </button>
             </div>
           ))
