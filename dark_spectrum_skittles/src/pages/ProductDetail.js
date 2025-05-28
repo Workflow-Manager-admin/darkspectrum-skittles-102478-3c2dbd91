@@ -100,7 +100,7 @@ function ProductDetail() {
           loading="lazy"
         />
         <div style={{
-          color: theme.colors.accent,
+          // color handled by global CSS if this is a heading; for structure improvement, make this a heading
           fontWeight: 700,
           fontSize: "1.4rem",
           marginTop: 2,
