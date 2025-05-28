@@ -20,7 +20,7 @@ function Products() {
     setLoading(true);
     fetchProducts()
       .then(d => { if (mounted) setProducts(d); })
-      .catch(err => setError("Could not load products."))
+      .catch(() => { if (mounted) setProducts([]); })
       .finally(() => { if (mounted) setLoading(false); });
     return () => { mounted = false; }
   }, []);
