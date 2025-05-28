@@ -35,7 +35,15 @@ function App() {
         paddingTop: 68 // to offset the fixed navbar (smaller)
       }}>
         <Navbar />
-        <div style={{ maxWidth: "980px", margin: "0 auto", padding: "0 10px" }}>
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "none", // Remove maxWidth constraint
+            margin: 0, // Remove auto margin to allow full width
+            padding: "0 10px",
+            boxSizing: "border-box"
+          }}
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
