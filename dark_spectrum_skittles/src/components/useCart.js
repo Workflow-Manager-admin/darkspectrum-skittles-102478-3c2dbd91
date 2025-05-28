@@ -5,7 +5,7 @@ import React from "react";
  * Custom React hook for managing the cart state, with persistence to localStorage.
  */
 function useCart() {
-  const STORAGE_KEY = "skittles_cart";
+  const STORAGE_KEY = "scribbles_cart";
   const [cartItems, setCartItems] = React.useState(() => {
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
