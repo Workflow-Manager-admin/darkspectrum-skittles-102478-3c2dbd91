@@ -35,7 +35,7 @@ function Cart() {
       }}>
         <h3 style={{
           margin: 0,
-          color: theme.colors.secondary,
+          // color controlled by global heading rule
           fontWeight: 700,
           fontSize: "1.5rem",
           letterSpacing: ".01em"
