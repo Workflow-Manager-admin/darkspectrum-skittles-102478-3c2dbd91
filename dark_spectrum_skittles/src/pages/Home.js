@@ -119,9 +119,8 @@ function Home() {
       {/* Product preview grid/carousel */}
       <div
         style={{
-          margin: "19px auto 0 auto",
+          margin: "19px 0 0 0",
           width: "100%",
-          maxWidth: 820,
         }}
       >
         <h3
@@ -136,11 +135,13 @@ function Home() {
         </h3>
         <div
           style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "12px 7px",
-            justifyContent: products.length < 5 ? "flex-start" : "center",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+            gap: "16px", // Even gutter in both directions
             width: "100%",
+            alignItems: "stretch",
+            justifyItems: "center",
+            padding: "4px 1vw",
           }}
         >
           {loading ? (
@@ -148,25 +149,26 @@ function Home() {
               Loading ...
             </span>
           ) : (
-            products.slice(0, 5).map((product) => (
+            products.slice(0, 8).map((product) => (
               <div
                 key={product.id}
                 className="glassy-card compact-card"
                 style={{
-                  width: 132,
+                  width: "100%",
+                  maxWidth: 180,
+                  minWidth: 0,
                   cursor: "pointer",
-                  padding: "7px 7px 13px 7px",
+                  padding: "12px 8px 16px 8px",
                   background: theme.colors.glass,
-                  borderRadius: "0.95rem",
+                  borderRadius: "0.98rem",
                   transition: "box-shadow 0.13s",
-                  boxShadow: "0 2px 8px #4da37633, 0 0 7px #8fe0bd23",
+                  boxShadow: "0 2px 12px #4da37633, 0 0 7px #8fe0bd19",
                   border: "1.1px solid rgba(255,255,255,0.10)",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center",
                   minHeight: 170,
-                  margin: "0 0 3px 0",
+                  margin: 0,
                 }}
                 onClick={() => navigate(`/products/${product.id}`)}
                 tabIndex={0}
@@ -177,12 +179,12 @@ function Home() {
                   alt={product.title}
                   className="product-img"
                   style={{
-                    width: 74,
-                    height: 74,
+                    width: 80,
+                    height: 80,
                     objectFit: "cover",
                     background: "#222",
-                    borderRadius: 16,
-                    marginBottom: 4,
+                    borderRadius: 18,
+                    marginBottom: 7,
                     boxShadow: "0 3px 10px #8fe0bd1e, 0 0 7px #8fe0bd19",
                   }}
                   loading="lazy"
@@ -216,7 +218,7 @@ function Home() {
                   style={{
                     color: theme.colors.secondary,
                     fontSize: ".87rem",
-                    marginTop: 2,
+                    marginTop: 4,
                     fontWeight: 500,
                   }}
                 >
