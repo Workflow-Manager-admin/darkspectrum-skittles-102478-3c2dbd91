@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import theme from "../theme";
-import SkittlesLogo from "../assets/SkittlesLogo.svg"; // Updated asset
+// Placeholder for a Scribbles Logo - you can replace '🖌️' with an SVG if you add one
 // PUBLIC_INTERFACE
 /**
- * Renders the navigation bar for the DarkSpectrum Skittles app.
+ * Renders the navigation bar for the Scribbles fashion app.
  */
 function Navbar() {
   return (
@@ -58,25 +58,8 @@ function Navbar() {
               background: "rgba(20,22,40,0.16)"
             }}
           >
-            <img
-              src={SkittlesLogo}
-              alt="Skittles/ColorCraft Logo"
-              style={{
-                height: 38,
-                width: 38,
-                minWidth: 38,
-                aspectRatio: "1/1",
-                verticalAlign: "middle",
-                filter:
-                  "drop-shadow(0 2px 12px #E87A4170) drop-shadow(0 0px 9px #8fe0bd41)",
-                background: "transparent",
-                borderRadius: "50%",
-                boxShadow: "0 0 18px 2px #8fe0bd33"
-              }}
-              draggable={false}
-              aria-hidden="true"
-              className="logo-svg"
-            />
+            {/* Modern scribbled paint brush or clothing hanger icon. Replace '🖌️' with image for production. */}
+            <span role="img" aria-label="Scribbles logo" style={{fontSize: 32}}>🖌️</span>
           </span>
           <span
             style={{
@@ -89,7 +72,7 @@ function Navbar() {
               transform: "translateY(2px)"
             }}
           >
-            DarkSpectrum Skittles
+            Scribbles
           </span>
         </Link>
         <div>
@@ -97,10 +80,10 @@ function Navbar() {
             Home
           </Link>
           <Link to="/products" className="navlink" style={navLinkStyle}>
-            Products
+            Shop
           </Link>
           <Link to="/cart" className="navlink" style={{...navLinkStyle, marginRight:0}}>
-            Cart
+            My Bag
           </Link>
         </div>
       </div>
