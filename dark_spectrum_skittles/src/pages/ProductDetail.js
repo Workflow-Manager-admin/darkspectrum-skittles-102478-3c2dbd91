@@ -100,7 +100,6 @@ function ProductDetail() {
           loading="lazy"
         />
         <div style={{
-          // color handled by global CSS if this is a heading; for structure improvement, make this a heading
           fontWeight: 700,
           fontSize: "1.4rem",
           marginTop: 2,
@@ -127,14 +126,16 @@ function ProductDetail() {
           className="btn"
           style={{
             width: "95%",
-            fontSize: "1.06rem",
+            fontSize: "1.10rem",
             borderRadius: 22,
             background: `linear-gradient(90deg,${theme.colors.primary} 80%, ${theme.colors.accent})`,
-            marginTop: 4
+            marginTop: 4,
+            fontWeight: 700,
+            letterSpacing: ".03em"
           }}
           onClick={() => addToCart(product, 1)}
         >
-          Add to Cart
+          Add to Bag
         </button>
       </div>
     </div>
