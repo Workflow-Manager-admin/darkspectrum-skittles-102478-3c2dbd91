@@ -36,7 +36,7 @@ function Home() {
     >
       {/* Scribbles Hero */}
       <section
-        className="taste-rainbow-hero"
+        className="scribbles-hero"
         style={{
           width: "100%",
           margin: "0 auto 44px auto",
@@ -60,7 +60,7 @@ function Home() {
           }}
           aria-hidden="true"
         >
-          {/* Animated/gradient BG w/ noise overlay & glow */}
+          {/* Fashion-inspired hero background, gradients, and texture overlays */}
           <div
             style={{
               position: "absolute",
@@ -68,22 +68,22 @@ function Home() {
               width: "100%",
               height: "100%",
               background:
-                "linear-gradient(135deg, #232a32 1%, #4da376 25%, #c7b9f6 50%, #416857 82%, #5479f2 100%)",
-              backgroundSize: "200% 200%",
-              filter: "blur(0.5px) brightness(1.05)",
+                "linear-gradient(135deg, #232a32 0%, #4da376 27%, #cabfff 53%, #416857 79%, #ffe1c6 100%)",
+              backgroundSize: "180% 180%",
+              filter: "blur(0.5px) brightness(1.06)",
               zIndex: 1,
-              animation: "rainbowgradientmove 16s linear infinite alternate",
+              animation: "scribblesgradientmove 15s linear infinite alternate",
               opacity: 1,
               borderRadius: "2.6rem",
               boxShadow:
-                "0 0 42px 0px #b4bef833, 0 8px 54px 14px #7e5cfd22, 0 0 88px 24px #31e88f33",
+                "0 0 42px 0px #cabfff33, 0 8px 54px 14px #bdc7fd22, 0 0 88px 24px #8fe0bd44",
             }}
           />
           <div
             style={{
               position: "absolute", inset: 0, pointerEvents: "none", zIndex: 3,
-              background: "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22 opacity=%220.12%22><filter id=%22n%22><feTurbulence baseFrequency=%220.99%22 numOctaves=%222%22 seed=%2242%22/></filter><rect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22/></svg>')",
-              opacity: 0.12,
+              background: "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22 opacity=%220.10%22><filter id=%22n%22><feTurbulence baseFrequency=%221.09%22 numOctaves=%222%22 seed=%22112%22/></filter><rect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22/></svg>')",
+              opacity: 0.11,
               borderRadius: "2.6rem",
               mixBlendMode: "soft-light"
             }}
@@ -94,20 +94,20 @@ function Home() {
               inset: "-8px",
               borderRadius: "2.8rem",
               zIndex: 2,
-              filter: "blur(13px)",
+              filter: "blur(16px)",
               background:
-                "conic-gradient(from 0deg, #eaebef 12%, #ded0ff 44%, #ffe1ee 77%, #eaebef 100%)",
-              opacity: 0.22,
+                "conic-gradient(from 0deg, #dadde8 14%, #ded0ff 37%, #ffe1ee 77%, #f6f2fa 100%)",
+              opacity: 0.17,
             }}
           />
           <style>
             {`
-@keyframes rainbowgradientmove {
+@keyframes scribblesgradientmove {
   0% {
-    background-position: 0% 52%;
+    background-position: 0% 60%;
   }
   100% {
-    background-position: 100% 48%;
+    background-position: 100% 40%;
   }
 }
             `}
@@ -118,15 +118,15 @@ function Home() {
           style={{
             position: "relative",
             zIndex: 4,
-            background: "rgba(30,30,38,0.80)",
+            background: "rgba(30,30,38,0.88)",
             minHeight: 330,
             width: "100%",
-            maxWidth: 830,
+            maxWidth: 840,
             margin: "4px auto",
             padding: "46px 26px 40px 26px",
             borderRadius: "2.5rem",
             boxShadow:
-              "0 12px 50px #3c2b5099, 0 0 44px #b9aef473, 0 0 44px #8fe0bd33, 0 8px 38px #a5bff944",
+              "0 12px 50px #11232299, 0 0 44px #bdb0fe33, 0 0 44px #8fe0bd33, 0 8px 38px #cfd5f944",
             border: "2.6px solid rgba(255,255,255,0.14)",
             backdropFilter: "blur(10.5px)",
             display: "flex",
@@ -137,7 +137,7 @@ function Home() {
             justifyContent: "center"
           }}
         >
-          {/* Modern placeholder for clothing/fashion icon illustration */}
+          {/* Clothing & accessories brand icon illustration */}
           <div
             style={{
               display: "flex",
@@ -151,23 +151,23 @@ function Home() {
               marginLeft: 0,
             }}
           >
-            {/* Fashion icon - you could swap this for an SVG asset for a shirt, dress, or accessories later */}
+            {/* Fashion-forward icon: t-shirt and glasses emoji as playful placeholder */}
             <span
               role="img"
-              aria-label="Trendy shirt icon"
-              style={{ fontSize: 74, marginBottom: 7, color: "#eee" }}
+              aria-label="T-Shirt & Glasses"
+              style={{ fontSize: 76, marginBottom: 2, color: "#fff" }}
             >
-              👕
+              👕🕶️
             </span>
             <span style={{
               fontWeight: 700,
-              fontSize: '1.09rem',
+              fontSize: '1.14rem',
               color: "#ededed",
-              letterSpacing: ".07em"
+              letterSpacing: ".08em"
             }}
-            >Express Your Style</span>
+            >Artful Clothing & Accessories</span>
           </div>
-          {/* Main Text - Bold Headline */}
+          {/* Main Text - Modern, Stylish Headline */}
           <div
             style={{
               flex: 1,
@@ -175,7 +175,7 @@ function Home() {
               flexDirection: "column",
               alignItems: "flex-start",
               justifyContent: "center",
-              gap: 11,
+              gap: 13,
               paddingLeft: 5,
               paddingRight: 5,
               minWidth: 220,
@@ -183,13 +183,13 @@ function Home() {
           >
             <h1
               style={{
-                fontSize: "3.4rem",
+                fontSize: "3.22rem",
                 fontWeight: 900,
                 margin: 0,
                 lineHeight: 1.08,
-                letterSpacing: ".01em",
+                letterSpacing: ".03em",
                 background:
-                  "linear-gradient(90deg, #aac9f6 0%, #bcefd8 20%, #fdc3ff 55%, #bdb0fe 80%, #e3efe7 100%)",
+                  "linear-gradient(90deg, #b8bbfa 0%, #8fe0bd 23%, #ffd2e6 58%, #bdb0fe 92%, #e3efe7 100%)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
@@ -198,77 +198,77 @@ function Home() {
                 textShadow: "0 3px 19px #bdb0fe33, 0 0 10px #bdb0fe17",
                 fontFamily:
                   "'GT Walsheim Pro', 'Arial Rounded MT Bold', 'Inter', sans-serif",
-                transition: "font-size 0.2s",
+                transition: "font-size 0.22s",
               }}
             >
-              Wear What Moves You
+              For Outfits That Make a Statement
             </h1>
             <div
               style={{
-                color: "#ded0ff",
+                color: "#c4eeff",
                 fontWeight: 700,
-                fontSize: "1.19rem",
+                fontSize: "1.09rem",
                 marginTop: 2,
                 marginBottom: 6,
-                letterSpacing: ".02em",
-                textShadow: "0 2px 14px #e3efe799",
+                letterSpacing: ".045em",
+                textShadow: "0 2px 14px #8fe0bd88",
               }}
             >
-              <span role="img" aria-label="sparkles">✨</span> Discover artful fashion for every personality
+              <span role="img" aria-label="magic">🧢</span> Bold, creative fashion—accessories that stand out
             </div>
             <p
               style={{
-                color: "rgba(255,255,255,0.82)",
-                fontSize: "1.18rem",
+                color: "rgba(255,255,255,0.80)",
+                fontSize: "1.17rem",
                 margin: "0px 0 12px 0",
                 textShadow: "0 1.5px 14px #8fe0bd44",
                 lineHeight: 1.39,
                 fontWeight: 500,
-                letterSpacing: '.011em',
-                maxWidth: 410,
-                opacity: 0.98,
+                letterSpacing: '.010em',
+                maxWidth: 420,
+                opacity: 0.99,
               }}
             >
-              Enter a world of endless creativity—Scribbles curates unique clothing and accessories designed to help you stand out and showcase your one-of-a-kind style.
+              Scribbles lets you explore premium clothing and accessories from indie designers and up-and-coming brands. Shop curated looks—a fusion of color, form, and attitude.
             </p>
             <Link
               to="/products"
               tabIndex={0}
               style={{
                 background:
-                  "linear-gradient(93deg, #c3b1ea 30%, #8fe0bd 80%, #ffe1c6 96%)",
+                  "linear-gradient(93deg, #bdb0fe 32%, #8fe0bd 77%, #ffe1c6 100%)",
                 color: "#232a39",
                 fontWeight: 900,
-                fontSize: "1.13rem",
-                padding: "17px 38px",
+                fontSize: "1.11rem",
+                padding: "16px 34px",
                 borderRadius: "1.7rem",
                 textDecoration: "none",
-                textShadow: "0 4px 20px #fff6, 0 4px 9px #e87a4118",
+                textShadow: "0 4px 18px #fff7, 0 4px 9px #e87a4118",
                 boxShadow:
-                  "0 2px 38px #c3b1ea24, 0 1.5px 10px #4da37611, 0 1px 13px #bdb0fe33",
-                border: "2px solid #fff7",
+                  "0 2px 30px #c3b1ea16, 0 1.5px 10px #4da37611, 0 1px 13px #bdb0fe29",
+                border: "2px solid #fff8",
                 outline: 0,
                 marginTop: "7px",
-                letterSpacing: ".03em",
-                filter: "drop-shadow(0 1.5px 40px #bdb0fe12)",
+                letterSpacing: ".04em",
+                filter: "drop-shadow(0 1.5px 33px #8fe0bd16)",
                 cursor: "pointer",
-                transition: "background 0.18s, color 0.15s",
+                transition: "background 0.16s, color 0.13s",
                 willChange: "background,color",
               }}
               onMouseOver={e =>
                 (e.target.style.background =
-                  "linear-gradient(90deg, #bdb0fe 35%, #ffe1c6 100%)")
+                  "linear-gradient(90deg, #8fe0bd 50%, #ffe1c6 100%)")
               }
               onMouseOut={e =>
                 (e.target.style.background =
-                  "linear-gradient(93deg, #c3b1ea 30%, #8fe0bd 80%, #ffe1c6 96%)")
+                  "linear-gradient(93deg, #bdb0fe 32%, #8fe0bd 77%, #ffe1c6 100%)")
               }
             >
-              <span role="img" aria-label="clothes">🛍️</span> Shop Scribbles
+              <span role="img" aria-label="fashion">👗</span> Explore the Collection
             </Link>
           </div>
         </div>
-        {/* Right floating abstract flourishes or lines - omitted for minimal stylized brand */}
+        {/* No rainbow, no candy. Brand: fashion only. */}
       </section>
       {/* Product preview grid/carousel */}
       <div
