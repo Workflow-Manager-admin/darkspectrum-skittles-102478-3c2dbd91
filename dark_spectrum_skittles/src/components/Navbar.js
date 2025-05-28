@@ -38,11 +38,26 @@ function Navbar() {
           color: theme.colors.accent,
           textDecoration: "none",
           letterSpacing: "0.07em",
-          display: "flex", alignItems: "center", gap: 8,
-          filter: "drop-shadow(0 4px 10px #8fe0bd55)"
+          display: "flex", alignItems: "center", gap: 11,
+          filter: "drop-shadow(0 2px 8px #8fe0bd44)"
         }}>
-          <span style={{fontWeight: 300, fontSize: "2rem"}}>●</span>
-          <span style={{color: theme.colors.textPrimary}}>DarkSpectrum Skittles</span>
+          <img
+            src={SkittlesLogo}
+            alt="Skittles/ColorCraft Logo"
+            style={{
+              height: 32,
+              width: "auto",
+              marginRight: 2,
+              verticalAlign: "middle",
+              filter: "drop-shadow(0 2px 7px #E87A4188)"
+            }}
+            draggable={false}
+            aria-hidden="true"
+            className="logo-svg"
+          />
+          <span style={{color: theme.colors.textPrimary, letterSpacing: "0.08em"}}>
+            DarkSpectrum Skittles
+          </span>
         </Link>
         <div>
           <Link to="/" className="navlink" style={navLinkStyle}>
