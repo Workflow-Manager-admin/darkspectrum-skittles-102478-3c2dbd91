@@ -20,6 +20,7 @@ function Home() {
       .then(list => {
         if (alive) setProducts(list.slice(0, 8)); // Show up to 8 preview products
       })
+      .catch(() => { if (alive) setProducts([]); })
       .finally(() => { if (alive) setLoading(false); });
     return () => { alive = false; };
   }, []);
@@ -121,8 +122,6 @@ function Home() {
         >
           {loading ? (
             <span style={{ color: "#eee", fontSize: "1.05rem" }}>Loading ...</span>
-          ) : products.length === 0 ? (
-            <span style={{ color: "#aaa" }}>No products found.</span>
           ) : (
             products.slice(0, 5).map(product => (
               <div
