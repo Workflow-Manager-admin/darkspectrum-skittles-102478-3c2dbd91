@@ -4,47 +4,89 @@
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.1);
+
+  --ds-primary: #416857;
+  --ds-secondary: #4da376;
+  --ds-accent: #8fe0bd;
+  --ds-glass: rgba(30,30,38,0.73);
+  --ds-bg-gradient: linear-gradient(135deg, #202534 0%, #4da376 20%, #8fe0bd 50%, #416857 80%, #00071e 100%);
+  --ds-glow: 0 0 8px 2px #8fe0bd77;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--ds-glass);
+  backdrop-filter: blur(10px);
+  border-radius: 1.2rem;
+  border: 1.5px solid rgba(255,255,255,0.11);
+  box-shadow: var(--ds-glow);
 }
 
 body {
   margin: 0;
   font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  background-color: var(--kavia-dark);
+  background: var(--ds-bg-gradient);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: rgba(0,0,0,0.18);
+  position: relative;
 }
 
 .navbar {
-  background-color: var(--kavia-dark);
-  padding: 16px;
+  background: rgba(18,18,24,0.90);
+  padding: 16px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1.5px solid rgba(255,255,255,0.08);
+  box-shadow: 0 2px 15px #0004, var(--ds-glow);
   position: fixed;
   top: 0;
   width: 100%;
-  box-sizing: border-box;
   z-index: 100;
+  backdrop-filter: blur(10px);
 }
 
 .logo {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 8px;
+  letter-spacing: 0.06em;
+  color: var(--ds-accent);
+  filter: drop-shadow(0 2px 14px #8fe0bd33);
 }
 
 .logo-symbol {
   color: var(--kavia-orange);
+}
+
+.navlink {
+  color: #fff;
+  font-weight: 500;
+  margin-right: 32px;
+  text-decoration: none;
+  font-size: 1.09rem;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.navlink:last-child { margin-right: 0; }
+.navlink:hover,
+.navlink.active {
+  background: rgba(143,224,189,0.21);
+  color: var(--ds-accent);
+  box-shadow: 0 0 8px #8fe0bd44;
 }
 
 .container {
@@ -55,8 +97,35 @@ body {
   box-sizing: border-box;
 }
 
+.page {
+  min-height: calc(100vh - 80px);
+  padding-top: 96px;
+}
+
+.glassy-card {
+  background: var(--ds-glass);
+  border-radius: 1.3rem;
+  box-shadow: var(--ds-glow);
+  padding: 32px 28px;
+  border: 1.4px solid rgba(255,255,255,0.12);
+  margin-bottom: 28px;
+}
+
+.card {
+  background: var(--ds-glass);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 18px #8fe0bd22, var(--ds-glow);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 24px;
+  transition: box-shadow 0.16s;
+}
+.card:hover {
+  box-shadow: 0 6px 30px #4da37644, 0 0 9px #8fe0bd77;
+}
+
+/* Hero and section headings */
 .hero {
-  padding-top: 120px;
+  padding-top: 70px;
   padding-bottom: 64px;
   text-align: center;
   display: flex;
@@ -66,15 +135,17 @@ body {
 }
 
 .subtitle {
-  color: var(--kavia-orange);
-  font-weight: 500;
+  color: var(--ds-accent);
+  font-weight: 600;
   font-size: 1.1rem;
+  letter-spacing: 0.04em;
 }
 
 .title {
-  font-size: 3.5rem;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
   margin: 0;
 }
 
@@ -86,23 +157,41 @@ body {
   margin-bottom: 16px;
 }
 
-.btn {
-  background-color: var(--kavia-orange);
+/* Buttons */
+.btn,
+.btn-large {
+  background-color: var(--ds-primary, #416857);
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
+  border-radius: 32px;
+  padding: 10px 24px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 6px 25px #8fe0bd22;
 }
-
-.btn:hover {
-  background-color: #FF8B4D;
-}
-
 .btn-large {
-  padding: 12px 24px;
+  padding: 12px 32px;
   font-size: 1.1rem;
+}
+.btn:hover,
+.btn-large:hover {
+  background-color: var(--ds-secondary, #4da376);
+  box-shadow: 0 8px 30px #8fe0bd55;
+}
+
+/* Product images: responsive, rounded, elevated */
+.product-img {
+  border-radius: 24px;
+  box-shadow: 0 2px 18px #8fe0bd44, var(--ds-glow);
+  max-width: 100%;
+  background: #1f2a2f;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4da37699;
+  border-radius: 8px;
 }

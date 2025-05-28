@@ -35,3 +35,20 @@ ERROR in ./src/pages/ProductDetail.js 6:0-45
 Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/darkspectrum-skittles-102478-3c2dbd91/dark_spectrum_skittles/src/pages'
 
 webpack compiled with 4 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/darkspectrum-skittles-102478-3c2dbd91/dark_spectrum_skittles/src'
+ERROR in ./src/App.js 7:0-74
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/darkspectrum-skittles-102478-3c2dbd91/dark_spectrum_skittles/src'
+
+ERROR in ./src/components/Navbar.js 5:0-40
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/darkspectrum-skittles-102478-3c2dbd91/dark_spectrum_skittles/src/components'
+
+ERROR in ./src/pages/Home.js 6:0-40
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/darkspectrum-skittles-102478-3c2dbd91/dark_spectrum_skittles/src/pages'
+
+ERROR in ./src/pages/ProductDetail.js 6:0-45
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/darkspectrum-skittles-102478-3c2dbd91/dark_spectrum_skittles/src/pages'
+
+webpack compiled with 4 errors
