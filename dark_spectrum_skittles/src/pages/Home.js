@@ -26,60 +26,76 @@ function Home() {
   }, []);
 
   return (
-    <div className="page home" style={{ minHeight: "70vh", paddingTop: 100 }}>
+    <div
+      className="page home"
+      style={{
+        minHeight: "70vh",
+        paddingTop: 82, // less vertical space at top
+        paddingBottom: 10,
+      }}
+    >
       {/* Hero section */}
       <div
         className="hero"
         style={{
           padding: 0,
           margin: 0,
-          minHeight: 240,
+          minHeight: 170,
           flexDirection: "column",
-          gap: "14px"
+          gap: "9px",
         }}
       >
         <div
           className="glass"
           style={{
             background: theme.colors.gradient,
-            borderRadius: "1.2rem",
+            borderRadius: "1.1rem",
             boxShadow: theme.colors.glowAccent,
-            padding: "32px 18px",
-            maxWidth: "440px",
+            padding: "22px 9px", // more compact
+            maxWidth: "390px",
             margin: "0 auto",
             alignItems: "center",
             display: "flex",
             flexDirection: "column",
-            gap: 11,
+            gap: 7,
             border: "1.1px solid rgba(255,255,255,0.10)",
             backdropFilter: "blur(7px)",
-          }}>
-          <h1 style={{
-            // color is now handled globally via CSS for headings
-            fontSize: "2.25rem",
-            fontWeight: 800,
-            margin: 0,
-            letterSpacing: ".01em",
-            textShadow: "0 2px 14px #8fe0bd33"
-          }}>Taste The <span style={{color: "#fff"}}>Rainbow</span></h1>
-          <div className="subtitle" style={{
-            color: theme.colors.secondary,
-            fontWeight: 600,
-            marginTop: 0,
-            marginBottom: 7,
-            fontSize: "1.11rem",
-            letterSpacing: "0.01em"
-          }}>
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "2.05rem",
+              fontWeight: 800,
+              margin: 0,
+              letterSpacing: ".01em",
+              textShadow: "0 2px 14px #8fe0bd33",
+            }}
+          >
+            Taste The <span style={{ color: "#fff" }}>Rainbow</span>
+          </h1>
+          <div
+            className="subtitle"
+            style={{
+              color: theme.colors.secondary,
+              fontWeight: 600,
+              marginTop: 0,
+              marginBottom: 5,
+              fontSize: "1.05rem",
+              letterSpacing: "0.01em",
+            }}
+          >
             Skittles Product Showcase
           </div>
-          <p style={{
-            color: theme.colors.textSecondary,
-            fontSize: "1rem",
-            margin: "0px 0 9px 0",
-            textAlign: "center",
-            lineHeight: 1.4,
-            maxWidth: "330px"
-          }}>
+          <p
+            style={{
+              color: theme.colors.textSecondary,
+              fontSize: ".98rem",
+              margin: "0px 0 7px 0",
+              textAlign: "center",
+              lineHeight: 1.35,
+              maxWidth: "290px",
+            }}
+          >
             Explore a vibrant variety of Skittles. Dive into unique flavors, bold styles, and a delicious modern dark UI. Your candy adventure starts here!
           </p>
           <Link
@@ -87,13 +103,13 @@ function Home() {
             style={{
               background: theme.colors.primary,
               color: "#fff",
-              fontSize: "1.01rem",
-              padding: "8px 20px",
-              borderRadius: "1.3rem",
+              fontSize: ".97rem",
+              padding: "7px 16px",
+              borderRadius: "1.15rem",
               textDecoration: "none",
-              boxShadow: "0 2px 16px #4da37644",
-              marginTop: "6px",
-              transition: "background 0.16s"
+              boxShadow: "0 1px 11px #4da37644",
+              marginTop: "5px",
+              transition: "background 0.16s",
             }}
           >
             Browse All Products
@@ -101,49 +117,56 @@ function Home() {
         </div>
       </div>
       {/* Product preview grid/carousel */}
-      <div style={{
-        margin: "32px auto 0 auto",
-        width: "100%",
-        maxWidth: 850,
-      }}>
-        <h3 style={{
-          // color is now inherited as white from global CSS heading rule
-          fontWeight: 600,
-          marginLeft: "4px",
-          fontSize: "1.14rem",
-          marginBottom: "11px"
-        }}>
+      <div
+        style={{
+          margin: "19px auto 0 auto",
+          width: "100%",
+          maxWidth: 820,
+        }}
+      >
+        <h3
+          style={{
+            fontWeight: 600,
+            marginLeft: "3px",
+            fontSize: "1.06rem",
+            marginBottom: "6px",
+          }}
+        >
           Featured Skittles Products
         </h3>
         <div
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: "18px 13px",
+            gap: "12px 7px",
             justifyContent: products.length < 5 ? "flex-start" : "center",
-            width: "100%"
+            width: "100%",
           }}
         >
           {loading ? (
-            <span style={{ color: "#eee", fontSize: "1.01rem" }}>Loading ...</span>
+            <span style={{ color: "#eee", fontSize: ".98rem" }}>
+              Loading ...
+            </span>
           ) : (
-            products.slice(0, 5).map(product => (
+            products.slice(0, 5).map((product) => (
               <div
                 key={product.id}
-                className="glassy-card"
+                className="glassy-card compact-card"
                 style={{
-                  width: 152,
+                  width: 132,
                   cursor: "pointer",
-                  padding: 13,
+                  padding: "7px 7px 13px 7px",
                   background: theme.colors.glass,
-                  borderRadius: "1rem",
+                  borderRadius: "0.95rem",
                   transition: "box-shadow 0.13s",
-                  boxShadow: "0 3px 12px #4da37644, 0 0 10px #8fe0bd33",
+                  boxShadow: "0 2px 8px #4da37633, 0 0 7px #8fe0bd23",
                   border: "1.1px solid rgba(255,255,255,0.10)",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center"
+                  justifyContent: "center",
+                  minHeight: 170,
+                  margin: "0 0 3px 0",
                 }}
                 onClick={() => navigate(`/products/${product.id}`)}
                 tabIndex={0}
@@ -154,13 +177,13 @@ function Home() {
                   alt={product.title}
                   className="product-img"
                   style={{
-                    width: 90,
-                    height: 90,
+                    width: 74,
+                    height: 74,
                     objectFit: "cover",
                     background: "#222",
-                    borderRadius: 20,
-                    marginBottom: 5,
-                    boxShadow: "0 4px 12px #8fe0bd1e, 0 0 7px #8fe0bd29"
+                    borderRadius: 16,
+                    marginBottom: 4,
+                    boxShadow: "0 3px 10px #8fe0bd1e, 0 0 7px #8fe0bd19",
                   }}
                   loading="lazy"
                 />
@@ -169,21 +192,21 @@ function Home() {
                     color: theme.colors.textPrimary,
                     fontWeight: 600,
                     marginTop: 2,
-                    fontSize: ".99rem",
+                    fontSize: ".92rem",
                     textAlign: "center",
                     overflowWrap: "break-word",
                     wordBreak: "break-word",
                     hyphens: "auto",
-                    lineHeight: 1.18,
+                    lineHeight: 1.14,
                     minHeight: "2.1em",
-                    maxHeight: "3.2em",
+                    maxHeight: "2.8em",
                     overflow: "hidden",
                     marginBottom: 1,
-                    padding: "0 2px",
+                    padding: "0 1px",
                     display: "-webkit-box",
                     WebkitLineClamp: 2,
                     WebkitBoxOrient: "vertical",
-                    whiteSpace: "normal"
+                    whiteSpace: "normal",
                   }}
                   title={product.title}
                 >
@@ -192,8 +215,8 @@ function Home() {
                 <div
                   style={{
                     color: theme.colors.secondary,
-                    fontSize: ".92rem",
-                    marginTop: 3,
+                    fontSize: ".87rem",
+                    marginTop: 2,
                     fontWeight: 500,
                   }}
                 >
