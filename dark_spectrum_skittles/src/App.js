@@ -1,36 +1,50 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
+import theme from "./theme";
 
+/**
+ * PUBLIC_INTERFACE
+ * Main container for the DarkSpectrum Skittles app, with theming/layout/pages.
+ */
 function App() {
-  return (
-    <div className="app">
-      <nav className="navbar">
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-            <div className="logo">
-              <span className="logo-symbol">*</span> KAVIA AI
-            </div>
-            <button className="btn">Template Button</button>
-          </div>
-        </div>
-      </nav>
+  // Setup global shiny gradient background (body or app level)
+  React.useEffect(() => {
+    document.body.style.background = theme.colors.gradient;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.minHeight = "100vh";
+    document.body.style.transition = "background 0.5s";
+    document.body.style.fontFamily = `'Inter','Roboto','Helvetica','Arial',sans-serif`;
+    return () => {
+      document.body.style.background = "";
+    };
+  }, []);
 
-      <main>
-        <div className="container">
-          <div className="hero">
-            <div className="subtitle">AI Workflow Manager Template</div>
-            
-            <h1 className="title">dark_spectrum_skittles</h1>
-            
-            <div className="description">
-              Start building your application.
-            </div>
-            
-            <button className="btn btn-large">Button</button>
-          </div>
+  return (
+    <Router>
+      <div className="app" style={{
+        // Glassmorphism for app background
+        minHeight: "100vh",
+        background: "rgba(0,0,0,0.25)",
+        position: "relative",
+        paddingTop: 76 // to offset the fixed navbar
+      }}>
+        <Navbar />
+        <div style={{ maxWidth: "1024px", margin: "0 auto", padding: "0 1.5rem" }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
         </div>
-      </main>
-    </div>
+      </div>
+    </Router>
   );
 }
 
