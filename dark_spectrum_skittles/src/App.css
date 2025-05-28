@@ -121,10 +121,12 @@ body {
 .glassy-card,
 .compact-card {
   width: 100%;
-  max-width: 240px;
+  max-width: 340px;
   min-width: 0;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 18px auto;
   box-sizing: border-box;
+  font-size: 1.14rem;
+  /* Make everything feel larger and more immersive */
 }
 
 /* For grids using CSS grid: always stretch to available space */
