@@ -201,3 +201,23 @@ body {
   background: #4da37699;
   border-radius: 8px;
 }
+
+/* --- Product Title Wrapping (for featured/grid cards) --- */
+.product-title-multiline {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.07rem;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  line-height: 1.21;
+  min-height: 2.4em;
+  max-height: 3.65em;
+  overflow: hidden;
+  padding: 0 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}

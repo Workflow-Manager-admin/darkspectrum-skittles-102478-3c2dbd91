@@ -160,16 +160,29 @@ function Home() {
                   }}
                   loading="lazy"
                 />
-                <div style={{
-                  color: theme.colors.textPrimary,
-                  fontWeight: 600,
-                  marginTop: 2,
-                  fontSize: "1.07rem",
-                  textAlign: "center",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap"
-                }}>
+                <div
+                  style={{
+                    color: theme.colors.textPrimary,
+                    fontWeight: 600,
+                    marginTop: 2,
+                    fontSize: "1.07rem",
+                    textAlign: "center",
+                    overflowWrap: "break-word",
+                    wordBreak: "break-word",
+                    hyphens: "auto",
+                    lineHeight: "1.21",
+                    minHeight: "2.4em",
+                    maxHeight: "3.65em",
+                    overflow: "hidden",
+                    marginBottom: 1,
+                    padding: "0 2px",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    whiteSpace: "normal"
+                  }}
+                  title={product.title}
+                >
                   {product.title}
                 </div>
                 <div
