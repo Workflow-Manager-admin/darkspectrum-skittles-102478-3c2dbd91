@@ -13,6 +13,12 @@
   --ds-glow: 0 0 8px 2px #8fe0bd77;
 }
 
+/* Ensure all headings are white for readability */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff !important;
+  text-shadow: 0 2px 14px #262c2e44;
+}
+
 /* Glassmorphism utility */
 .glass {
   background: var(--ds-glass);
