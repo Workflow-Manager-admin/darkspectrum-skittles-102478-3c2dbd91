@@ -26,55 +26,59 @@ function Home() {
   }, []);
 
   return (
-    <div className="page home" style={{ minHeight: "70vh", paddingTop: 120 }}>
+    <div className="page home" style={{ minHeight: "70vh", paddingTop: 100 }}>
       {/* Hero section */}
       <div
         className="hero"
         style={{
           padding: 0,
           margin: 0,
-          minHeight: 320,
+          minHeight: 240,
           flexDirection: "column",
+          gap: "14px"
         }}
       >
         <div
           className="glass"
           style={{
             background: theme.colors.gradient,
-            borderRadius: "1.6rem",
+            borderRadius: "1.2rem",
             boxShadow: theme.colors.glowAccent,
-            padding: "44px 30px",
-            maxWidth: "550px",
+            padding: "32px 18px",
+            maxWidth: "440px",
             margin: "0 auto",
             alignItems: "center",
             display: "flex",
             flexDirection: "column",
-            gap: 18,
-            border: "1.5px solid rgba(255,255,255,0.09)",
-            backdropFilter: "blur(8px)",
+            gap: 11,
+            border: "1.1px solid rgba(255,255,255,0.10)",
+            backdropFilter: "blur(7px)",
           }}>
           <h1 style={{
             // color is now handled globally via CSS for headings
-            fontSize: "2.8rem",
+            fontSize: "2.25rem",
             fontWeight: 800,
             margin: 0,
             letterSpacing: ".01em",
-            textShadow: "0 2px 24px #8fe0bd33"
+            textShadow: "0 2px 14px #8fe0bd33"
           }}>Taste The <span style={{color: "#fff"}}>Rainbow</span></h1>
           <div className="subtitle" style={{
             color: theme.colors.secondary,
             fontWeight: 600,
             marginTop: 0,
-            marginBottom: 12,
-            fontSize: "1.23rem"
+            marginBottom: 7,
+            fontSize: "1.11rem",
+            letterSpacing: "0.01em"
           }}>
             Skittles Product Showcase
           </div>
           <p style={{
             color: theme.colors.textSecondary,
-            fontSize: "1.16rem",
-            margin: "5px 0 18px 0",
-            textAlign: "center"
+            fontSize: "1rem",
+            margin: "0px 0 9px 0",
+            textAlign: "center",
+            lineHeight: 1.4,
+            maxWidth: "330px"
           }}>
             Explore a vibrant variety of Skittles. Dive into unique flavors, bold styles, and a delicious modern dark UI. Your candy adventure starts here!
           </p>
@@ -83,12 +87,12 @@ function Home() {
             style={{
               background: theme.colors.primary,
               color: "#fff",
-              fontSize: "1.09rem",
-              padding: "12px 30px",
-              borderRadius: "1.8rem",
+              fontSize: "1.01rem",
+              padding: "8px 20px",
+              borderRadius: "1.3rem",
               textDecoration: "none",
-              boxShadow: "0 4px 25px #4da37655",
-              marginTop: "10px",
+              boxShadow: "0 2px 16px #4da37644",
+              marginTop: "6px",
               transition: "background 0.16s"
             }}
           >
@@ -98,16 +102,16 @@ function Home() {
       </div>
       {/* Product preview grid/carousel */}
       <div style={{
-        margin: "54px auto 0 auto",
+        margin: "32px auto 0 auto",
         width: "100%",
-        maxWidth: 900,
+        maxWidth: 850,
       }}>
         <h3 style={{
           // color is now inherited as white from global CSS heading rule
           fontWeight: 600,
-          marginLeft: "10px",
-          fontSize: "1.4rem",
-          marginBottom: "17px"
+          marginLeft: "4px",
+          fontSize: "1.14rem",
+          marginBottom: "11px"
         }}>
           Featured Skittles Products
         </h3>
@@ -115,27 +119,27 @@ function Home() {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: "30px 22px",
+            gap: "18px 13px",
             justifyContent: products.length < 5 ? "flex-start" : "center",
             width: "100%"
           }}
         >
           {loading ? (
-            <span style={{ color: "#eee", fontSize: "1.05rem" }}>Loading ...</span>
+            <span style={{ color: "#eee", fontSize: "1.01rem" }}>Loading ...</span>
           ) : (
             products.slice(0, 5).map(product => (
               <div
                 key={product.id}
                 className="glassy-card"
                 style={{
-                  width: 180,
+                  width: 152,
                   cursor: "pointer",
-                  padding: 20,
+                  padding: 13,
                   background: theme.colors.glass,
-                  borderRadius: "1.1rem",
+                  borderRadius: "1rem",
                   transition: "box-shadow 0.13s",
-                  boxShadow: "0 3px 18px #4da37655, 0 0 16px #8fe0bd44",
-                  border: "1.2px solid rgba(255,255,255,0.11)",
+                  boxShadow: "0 3px 12px #4da37644, 0 0 10px #8fe0bd33",
+                  border: "1.1px solid rgba(255,255,255,0.10)",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
@@ -150,13 +154,13 @@ function Home() {
                   alt={product.title}
                   className="product-img"
                   style={{
-                    width: 110,
-                    height: 110,
+                    width: 90,
+                    height: 90,
                     objectFit: "cover",
                     background: "#222",
-                    borderRadius: 28,
-                    marginBottom: 8,
-                    boxShadow: "0 6px 15px #8fe0bd26, 0 0 9px #8fe0bd44"
+                    borderRadius: 20,
+                    marginBottom: 5,
+                    boxShadow: "0 4px 12px #8fe0bd1e, 0 0 7px #8fe0bd29"
                   }}
                   loading="lazy"
                 />
@@ -165,14 +169,14 @@ function Home() {
                     color: theme.colors.textPrimary,
                     fontWeight: 600,
                     marginTop: 2,
-                    fontSize: "1.07rem",
+                    fontSize: ".99rem",
                     textAlign: "center",
                     overflowWrap: "break-word",
                     wordBreak: "break-word",
                     hyphens: "auto",
-                    lineHeight: "1.21",
-                    minHeight: "2.4em",
-                    maxHeight: "3.65em",
+                    lineHeight: 1.18,
+                    minHeight: "2.1em",
+                    maxHeight: "3.2em",
                     overflow: "hidden",
                     marginBottom: 1,
                     padding: "0 2px",
@@ -188,8 +192,8 @@ function Home() {
                 <div
                   style={{
                     color: theme.colors.secondary,
-                    fontSize: ".97rem",
-                    marginTop: 4,
+                    fontSize: ".92rem",
+                    marginTop: 3,
                     fontWeight: 500,
                   }}
                 >
